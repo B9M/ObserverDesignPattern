@@ -15,6 +15,7 @@ public class App {
 		observavble.setState(11);
 		observavble.unsubscribe(o1);//o1 ne poura pas recevoir la notification
 		//JAVA 7
+		// push 
 		observavble.subscribe(new Observer() {
 			
 			@Override
@@ -23,7 +24,18 @@ public class App {
 			}
 		});
 		
-		//JAVA 8
+		/*// pop 
+		 observavble.subscribe(new Observer() {
+			
+			@Override
+			public void update(int state) {
+				System.out.println("Observateur Anonyme ******* Java 7");
+			}
+		});
+		 
+		 */
+		
+		//JAVA 8(pas de pobléme entre push et POP)
 		observavble.subscribe(
 				obs -> {
 					System.out.println("Observateur Anonyme ******* // java 8");
